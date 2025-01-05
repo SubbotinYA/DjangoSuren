@@ -1,0 +1,25 @@
+{% extends 'site_app_list/base.html'%}
+
+{% block title %}
+    Удалялка элементов #{{ object.id }}
+{% endblock %}
+
+{% block body %}
+    <h2> Удаление элемента {{ object.title }}</h2>
+    <p>
+        Точно удаляем элемент? {{ object.title }}
+        Описание: <i> {{ object.description }} </i>?
+    </p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Жахнем</button>
+    </form>
+
+
+ <div>
+    <a href="{% url 'SiteApp:detail' object.pk %}" >
+      Идем в Detail SiteApp</a>
+ </div>
+{% endblock %}
+

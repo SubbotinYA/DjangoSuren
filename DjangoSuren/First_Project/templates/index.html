@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block nameblock %}
+    My_First_Site
+{% endblock %}
+
+
+{% block body %}
+    <h1> Добропожаловать на мой сайт!</h1>
+    <h2> Начинаем работать!</h2>
+    <h3> Сейчас {% now "jS F Y H:i" %}</h3>
+{% endblock %}
+

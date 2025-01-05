@@ -1,0 +1,28 @@
+{% extends 'site_app_list/base.html'%}
+
+{% block title %}
+    Site_list
+{% endblock %}
+
+{% block body %}
+    <h1> Мы в приложении Site_app_list</h1>
+    <ul>
+        <li><a href= "{% url 'SiteApp:list' %}"> Все игроки  </a></li>
+        <li><a href= "{% url 'SiteApp:aga' %}"> Улыбающиеся игроки  </a></li>
+        <li><a href= "{% url 'SiteApp:create' %}"> Создание игрока  </a></li>
+    </ul>
+    <h2> а здесь мы пройдемся циклом по списку в views.py в def index_view. Список не отображается т.к. заккоментировали контролер def index_view</h2>
+    <ul>
+        {% for element in my_list %}
+            <li>{{ element.title }}</li>
+        {% if element.aga%}
+        здесь можно эмодзи поставить &#128514;
+        {% else %}
+        а теперь грустных игроков подтянем из базы &#128557;
+        {% endif%}
+        {% endfor %}
+    </ul>
+    <h2> А это снизу шаблонный тэг include 'site_app_list/components/siteapp_list.html' </h2>
+    {% include 'site_app_list/components/siteapp_list.html' %}
+{% endblock  %}
+

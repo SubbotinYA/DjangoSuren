@@ -1,0 +1,17 @@
+
+<h3> Привет из site_app_list/components/siteapp_list.html :</h3>
+<ul>
+  {% for element in object_list %}
+  <li>
+    <a href="{% url 'SiteApp:detail' element.pk %}">
+      {{ element.title }}
+      {% if element.aga %}
+      😀
+     {% else %}
+       😞
+     {% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<h3> количество отбражения игроков зависит от атрибута queryset class SiteListView(ListView) </h3>

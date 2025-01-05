@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block nameblock %}
+    Base Title
+    {% endblock %} </title>
+</head>
+<body>
+{% include 'components/navbar.html' %}
+{% block body %}
+    Base Body!!!!!
+{% endblock %}
+<footer>
+  &copy; Это footer
+</footer>
+{% block footer %}
+    Блок footer
+{% endblock %}
+
+</body>
+</html>
